@@ -1,0 +1,30 @@
+{
+  "_comment": "Cache of running-press review dates. These facts never change, so never look one up twice. confidence=verified means a source URL was confirmed in-session; confidence=carried means inherited from prior board prose with no source — re-verify before relying on it.",
+  "_updated": "2026-09-12",
+  "models": {
+    "Topo Athletic Specter 2": {"pub": "Believe in the Run", "date": "2024-07-12", "confidence": "verified", "note": "nothing newer found"},
+    "HOKA Cielo X1 2.0": {"pub": "Road Trail Run", "date": "2025-02-12", "confidence": "verified"},
+    "Altra FWD VIA": {"pub": "RunRepeat", "date": "2025", "confidence": "verified", "note": "YEAR ONLY, no month printed. BITR review is 2024-10-24. FWD VIA 2 (RTR 2025-10) is a different generation and does not count. Needs a firm date or it should be dropped."},
+    "Inov8 TrailFly Speed V2": {"pub": "Road Trail Run", "date": "2026-03", "confidence": "verified"},
+    "New Balance FuelCell SuperComp Pacer v2": {"pub": "Believe in the Run", "date": "2024-07-12", "confidence": "verified"},
+    "Mizuno Neo Vista 2": {"pub": "Believe in the Run", "date": "2025-06-19", "confidence": "verified"},
+    "adidas Terrex Agravic TT": {"pub": "iRunFar", "date": "2026-06-18", "confidence": "verified", "also": "Road Trail Run 2026-04-13"},
+    "Brooks Ghost Max 3": {"pub": "Believe in the Run", "date": "2025-06-06", "confidence": "verified", "also": "Road Trail Run 2025-11-25"},
+    "On Cloudmonster 3": {"pub": "Believe in the Run", "date": "2026-03-13", "confidence": "verified", "also": "Road Trail Run 2026-02-26"},
+    "Nike Structure 26": {"pub": "Road Trail Run", "date": "2025-07-24", "confidence": "verified"},
+    "Nike Alphafly 3": {"pub": "Believe in the Run", "date": "2024-01", "confidence": "carried", "note": "coverage clusters at early-2024 launch; no in-window review found 2026-09-09"},
+    "adidas Terrex Agravic Speed 2": {"pub": "Road Trail Run", "date": "2026-06", "confidence": "carried"},
+    "CEP Pro Run Omnispeed": {"pub": "Road Trail Run", "date": "2026-01", "confidence": "carried"},
+    "Craft Pure Trail Pro": {"pub": "Believe in the Run", "date": "2025-06", "confidence": "carried"},
+    "The North Face VECTIV Enduris 4": {"pub": "iRunFar", "date": "2026-03", "confidence": "carried"},
+    "Inov8 TrailFly Zero": {"pub": "Road Trail Run", "date": "2025-05", "confidence": "carried"},
+    "Inov8 TrailFly Zero V2": {"pub": "Road Trail Run", "date": "2026-04", "confidence": "carried", "also": "iRunFar 2026-04"},
+    "adidas Adizero EVO SL": {"pub": "Road Trail Run", "date": "2024-12", "confidence": "carried", "note": "MARGINAL. DoR 2025-01. Carried on RTR's EVO SL Woven review 2026-04 — same midsole/geometry, different upper. Arguably a different model."},
+    "adidas adizero Takumi Sen 11": {"pub": "Doctors of Running", "date": "2025-08", "confidence": "carried", "also": "Road Trail Run 2025-08"},
+    "Nike Pegasus Premium": {"pub": "multiple", "date": "2025-01", "confidence": "carried", "note": "clusters Jan-Feb 2025; fell out of window 2026-09-08"},
+    "Saucony Endorphin Cheetah": {"pub": "Believe in the Run", "date": null, "confidence": "carried", "note": "no date ever captured — verify"},
+    "Topo Athletic Atmos": {"pub": "RunRepeat", "date": null, "confidence": "carried", "note": "no date ever captured — verify"},
+    "Altra Torin 8": {"pub": "Doctors of Running", "date": null, "confidence": "carried", "note": "no date ever captured — verify"},
+    "APL (all models)": {"pub": null, "date": null, "confidence": "verified", "note": "NO running-specific publication covers this brand. Standing rejection."}
+  }
+}

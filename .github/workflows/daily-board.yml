@@ -16,8 +16,8 @@ jobs:
 
       - uses: anthropics/claude-code-action@v1
         with:
-          # Subscription auth. Swap for anthropic_api_key if you'd rather bill the API.
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # API billing auth. Swap for claude_code_oauth_token if you'd rather use a subscription.
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
             Read TASK_PROMPT.md in this repository and follow it exactly, with three changes:
 

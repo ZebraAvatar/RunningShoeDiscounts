@@ -1,0 +1,83 @@
+{
+  "_comment": "Site registry. How each site exposes discounts, what works, what doesn't. Update every run. A starting point, not a whitelist.",
+  "_updated": "2026-09-12",
+  "sites": [
+    {
+      "name": "Running Warehouse", "tier": 1, "tz_note": "prices in USD",
+      "discount_exposure": "Brand clearance pages work reliably. catpage-SALEM.html / MRSHOE / Mens_Running_Shoes_Sale all 404 as of 2026-09. Known-good pattern: catpage-<BRAND>MS.html e.g. catpage-ALTRAMS.html",
+      "known_good_urls": ["https://www.runningwarehouse.com/catpage-ALTRAMS.html"],
+      "known_404": ["catpage-SALEM.html", "catpage-MRSHOE.html", "Mens_Running_Shoes_Sale.html"],
+      "gotchas": [
+        "Category grid prices disagree with product pages in BOTH directions. Confirmed 2026-09-09: grid said Torin 8 White/Blue $79.88, PDP said $99.88.",
+        "'Compare at' figures are algorithmic anchors, not MSRP ($263, $266, $272, $183.09, $158). Use the struck-through price shown, or manufacturer list.",
+        "Per-size stock IS server-rendered. Plain fetch works.",
+        "OPEN QUESTION: a Haiku subagent reported an 'Extra 20% Off in Cart' badge on 11 SKUs on 2026-09-09. User verified in cart that no discount applied. Cause was a leading extraction prompt. Never re-introduce that phrasing. Determine independently whether such a badge renders at all."
+      ]
+    },
+    {
+      "name": "Zappos", "tier": 1,
+      "discount_exposure": "men-running-shoes category with percentOff sort. Sitewide code banners appear and vanish (BONUS20 present 09-07 and 09-08, absent 09-09).",
+      "known_good_urls": ["https://www.zappos.com/men-running-shoes/CK_XAcABAeICAgEY.zso"],
+      "gotchas": [
+        "Per-size stock is JS-rendered. Plain fetch returns 'unreadable' — 11 of 16 PDPs failed 2026-09-09. NEEDS PLAYWRIGHT. This is the single biggest fixable coverage gap.",
+        "Per-SKU code eligibility is not observable without a cart. Price at shelf, annotate the code."
+      ]
+    },
+    {
+      "name": "Sierra", "tier": 1,
+      "discount_exposure": "Product pages read cleanly. Main mens-running-shoes listing has returned HTTP 500 on six consecutive runs — no discovery possible.",
+      "gotchas": ["Size selector lists sizes but attaches no stock count."]
+    },
+    {
+      "name": "REI / REI Garage", "tier": 1,
+      "discount_exposure": "Garage page readable. Main category is robots-disallowed.",
+      "gotchas": ["Nothing has cleared 30% off a $130+ list in several runs. Consider demoting to tier 2."]
+    },
+    {
+      "name": "adidas", "tier": 2,
+      "discount_exposure": "men-running-shoes listing carries the code banner; PDPs carry the code terms and any end date.",
+      "gotchas": ["Listing banner and PDP terms can state different things. Report both verbatim."]
+    },
+    {
+      "name": "Altra", "tier": 2,
+      "discount_exposure": "Sale landing page AND product pages, which disagree. Confirmed 2026-09-09: grid showed FWD VIA $128, PDP showed $80.",
+      "gotchas": ["PDP wins. PDPs do expose per-size availability with low-inventory flags."]
+    },
+    {
+      "name": "Saucony", "tier": 2,
+      "discount_exposure": "Sale listing gives prices. Individual PDPs 404 consistently; on-site search robots-disallowed. Sizes unreadable.",
+      "gotchas": ["Code FAST is free shipping, not a discount."]
+    },
+    {
+      "name": "Nike", "tier": 2,
+      "discount_exposure": "mens-sale-running-shoes category.",
+      "gotchas": ["Never exposes per-size stock to a plain fetch. Try Playwright."]
+    },
+    {"name": "Brooks", "tier": 2, "status": "sale URL 404s as of 2026-09-09, needs rediscovery"},
+    {"name": "HOKA", "tier": 2, "discount_exposure": "hoka.com/en/us/sale/ readable; nothing has reached the bar"},
+    {"name": "ASICS", "tier": 2, "status": "robots-disallowed"},
+    {"name": "New Balance", "tier": 2, "status": "sale URL 404s / prior 403s"},
+    {"name": "Joe's New Balance Outlet", "tier": 2, "status": "404s on two attempts. UNRESOLVED LEAD: SuperComp Elite v5 claimed at $105 (~60% off)"},
+    {"name": "Holabird", "tier": 2, "status": "404s on two attempts. UNRESOLVED LEAD: Hyperion Max 3 claimed at $119.95"},
+    {"name": "On", "tier": 2, "status": "sale page returns empty, 3 consecutive runs"},
+    {"name": "Topo Athletic", "tier": 2, "status": "sale URL 404s"},
+    {"name": "Under Armour", "tier": 2, "discount_exposure": "outlet running category; discounts 5-8%, nothing at the bar"},
+    {"name": "Puma", "tier": 2, "status": "sale URL 404s"},
+    {"name": "Mizuno USA", "tier": 2, "status": "sale URL 404s"},
+    {"name": "Peter Glenn", "tier": 3, "gotchas": ["Never exposes a readable size run in 5 attempts"]},
+    {"name": "Woot", "tier": 3, "status": "robots-disallowed", "gotchas": ["Fast-repricing; flag for re-check at click time"]},
+    {
+      "name": "Steep & Cheap / Backcountry", "tier": 3,
+      "gotchas": ["Consistently top out at US 12.0 on running shoes. ~9 shoes between them at 30%+ off $130+, none in 12.5. Summarize in one grouped block; never enumerate PDPs."]
+    }
+  ],
+  "aggregators": [
+    {"name": "DealNews", "note": "index pages 404; individual deal links work"},
+    {"name": "Slickdeals", "note": "index pages 404; individual thread links work"},
+    {"name": "Google Shopping", "note": "useful for cheapest-source cross-checks"}
+  ],
+  "do_not_attempt": {
+    "_reason": "returned nothing across multiple runs; try at most once and log as a coverage gap",
+    "sites": ["Dick's", "Public Lands", "Road Runner Sports", "Fleet Feet", "Scheels", "Shoe Carnival", "Nordstrom Rack", "Moosejaw (redirects to Public Lands)", "Amazon", "Reddit"]
+  }
+}

@@ -1,1 +1,43 @@
+name: Daily shoe deal board
 
+on:
+  schedule:
+    - cron: '0 4 * * *'   # 04:00 UTC daily
+  workflow_dispatch:       # and a "Run workflow" button
+
+permissions:
+  contents: write
+
+jobs:
+  build-board:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          # Subscription auth. Swap for anthropic_api_key if you'd rather bill the API.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Read TASK_PROMPT.md in this repository and follow it exactly, with three changes:
+
+            1. The board is written to `index.html` at the repo root, not published as an
+               Artifact. Keep the structure TASK_PROMPT.md describes — the filterable table,
+               the promotions table, the three-line alert box, and the sections below it.
+            2. `registry.json`, `reviews.json` and `state/` are already checked out here.
+               Read them, and write your updates back to the same paths.
+            3. Save raw HTML snapshots to `snapshots/YYYY-MM-DD/`. Delete anything older
+               than 14 days.
+
+            Then stage and commit everything you changed with a one-line message naming
+            today's date. Do not commit any credential.
+          claude_args: |
+            --allowedTools Edit,Read,Write,Bash,WebSearch,WebFetch
+            --max-turns 60
+
+      - name: Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet && git diff --staged --quiet || git commit -am "board: $(date -u +%F)" || true
+          git push

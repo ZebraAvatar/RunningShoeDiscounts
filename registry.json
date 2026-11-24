@@ -1,6 +1,6 @@
 {
   "_comment": "Site registry. How each site exposes discounts, what works, what doesn't. Update every run. A starting point, not a whitelist.",
-  "_updated": "2026-11-23",
+  "_updated": "2026-11-24",
   "sites": [
     {
       "name": "Running Warehouse",
@@ -9,7 +9,8 @@
       "discount_exposure": "Brand clearance pages work reliably. catpage-SALEM.html / MRSHOE / Mens_Running_Shoes_Sale all 404 as of 2026-09. Known-good pattern: catpage-<BRAND>MS.html e.g. catpage-ALTRAMS.html",
       "known_good_urls": [
         "https://www.runningwarehouse.com/catpage-ALTRAMS.html",
-        "https://www.runningwarehouse.com/Altra_Paradigm_8/descpage-ALPA8W3.html"
+        "https://www.runningwarehouse.com/Altra_Paradigm_8/descpage-ALPA8W3.html",
+        "WebFetch works for both URLs above (2026-11-24)"
       ],
       "known_404": [
         "catpage-SALEM.html",
@@ -27,7 +28,8 @@
         "Per-size stock IS server-rendered. Plain fetch works.",
         "OPEN QUESTION: a Haiku subagent reported an 'Extra 20% Off in Cart' badge on 11 SKUs on 2026-09-09. User verified in cart that no discount applied. Cause was a leading extraction prompt. Never re-introduce that phrasing. Determine independently whether such a badge renders at all.",
         "2026-11-22: catpage-ALTRAMS grid shows Clearance -N% tags and struck prices; PDP size selector lists only sizes in stock/sold out (no 12/12.5/13 on Altra clearance). Grid struck price absent on PDP. Black Friday drawer lists brand offers.",
-        "2026-11-23: plain curl to catpage-ALTRAMS.html returned HTTP 406 (browser UA + Accept headers); WebFetch not tried."
+        "2026-11-23: plain curl to catpage-ALTRAMS.html returned HTTP 406 (browser UA + Accept headers); WebFetch not tried.",
+        "2026-11-24: curl (browser UA) to catpage-ALTRAMS.html returned 406 again, but WebFetch of the same URL and of the Paradigm 8 PDP worked. Use WebFetch for Running Warehouse. Grid text shows 'Clearance -N%' tags and struck prices; PDP Paradigm 8 showed only US 10.0 D in stock on Black/White, no struck price in text."
       ]
     },
     {
@@ -41,7 +43,8 @@
         "Per-size stock is JS-rendered. Plain fetch returns 'unreadable' \u2014 11 of 16 PDPs failed 2026-09-09. NEEDS PLAYWRIGHT. This is the single biggest fixable coverage gap.",
         "Per-SKU code eligibility is not observable without a cart. Price at shelf, annotate the code.",
         "2026-11-22: WebFetch of the category URL returned only a Women's title, no listings.",
-        "2026-11-23: curl of the category URL returned HTTP 200 (2.1 MB) but the page title is \"Women's Shoes\" and listings include clogs; URL is not a men's running category. Needs a corrected URL and Playwright (/opt/pw-browsers absent in this environment)."
+        "2026-11-23: curl of the category URL returned HTTP 200 (2.1 MB) but the page title is \"Women's Shoes\" and listings include clogs; URL is not a men's running category. Needs a corrected URL and Playwright (/opt/pw-browsers absent in this environment).",
+        "2026-11-24: same men-running-shoes URL again returns title \"Women's Shoes\" (HTTP 200). URL is wrong; needs rediscovery."
       ]
     },
     {
@@ -50,7 +53,8 @@
       "discount_exposure": "Product pages read cleanly. Main mens-running-shoes listing has returned HTTP 500 on six consecutive runs \u2014 no discovery possible.",
       "gotchas": [
         "Size selector lists sizes but attaches no stock count.",
-        "2026-11-23: curl returned HTTP 403."
+        "2026-11-23: curl returned HTTP 403.",
+        "2026-11-24: curl HTTP 403 again."
       ]
     },
     {
@@ -67,7 +71,8 @@
       "discount_exposure": "men-running-shoes listing carries the code banner; PDPs carry the code terms and any end date.",
       "gotchas": [
         "Listing banner and PDP terms can state different things. Report both verbatim.",
-        "2026-11-23: curl of men-running-shoes listing failed to connect (no HTTP response)."
+        "2026-11-23: curl of men-running-shoes listing failed to connect (no HTTP response).",
+        "2026-11-24: curl of /us/men-running-shoes returned HTTP 403."
       ]
     },
     {
@@ -76,7 +81,8 @@
       "discount_exposure": "Sale landing page AND product pages, which disagree. Confirmed 2026-09-09: grid showed FWD VIA $128, PDP showed $80.",
       "gotchas": [
         "PDP wins. PDPs do expose per-size availability with low-inventory flags.",
-        "2026-11-23: curl of altra.com/en-us/sale/ failed to connect (no HTTP response)."
+        "2026-11-23: curl of altra.com/en-us/sale/ failed to connect (no HTTP response).",
+        "2026-11-24: www.altra.com did not resolve in DNS."
       ]
     },
     {
@@ -105,7 +111,8 @@
       "tier": 2,
       "discount_exposure": "hoka.com/en/us/sale/ readable; nothing has reached the bar",
       "gotchas": [
-        "2026-11-23: curl of hoka.com/en/us/sale/ returned HTTP 403."
+        "2026-11-23: curl of hoka.com/en/us/sale/ returned HTTP 403.",
+        "2026-11-24: curl HTTP 403 again."
       ]
     },
     {

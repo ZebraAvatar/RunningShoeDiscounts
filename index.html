@@ -1,25 +1,28 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Running shoe deals — 2026-11-23</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Running shoe deals — 2026-11-24</title>
 <style>body{font:15px system-ui;max-width:960px;margin:2em auto;padding:0 1em}table{border-collapse:collapse;width:100%;margin:1em 0}td,th{border:1px solid #ccc;padding:6px;text-align:left}.alert{border:2px solid #333;padding:.6em 1em;background:#fffbe6}button{margin-right:6px}.chip{padding:1px 6px;border-radius:8px;background:#eee;margin-right:4px}</style></head><body>
-<h1>Running shoe deals — US men's 12.5 — 2026-11-23</h1>
-<div class="alert"><p>Best find: none — no men's running listing could be read this run.</p>
-<p>Running Warehouse returned 406, Sierra and HOKA 403, Altra and adidas no connection; the Zappos URL served Women's Shoes.</p>
-<p>Nothing is shown as vanished: no row from 2026-11-22 was re-read this run.</p></div>
+<h1>Running shoe deals — US men's 12.5 — 2026-11-24</h1>
+<div class="alert"><p>Best find: Altra Paradigm 8 at $79.88 against a struck $170.00 (53.0118% off) on Running Warehouse; 12 / 12.5 / 13 are not listed in its selector.</p>
+<p>Only Running Warehouse's Altra clearance page was readable; Zappos (wrong category URL), Sierra, HOKA, adidas (403) and Altra (DNS) were not.</p>
+<p>Vanished: no row from the 2026-11-23 board; it had none.</p></div>
 <h2>Promotions read</h2>
 <table><tr><th>Site</th><th>What it says</th><th>Rate</th><th>Code</th><th>End date</th></tr>
-<tr><td colspan="5">Could not read: no promotion text was retrieved from any site this run.</td></tr></table>
+<tr><td>Running Warehouse</td><td>"Clearance -53%" (Paradigm 8), "Clearance -56%" (Olympus 6), "Clearance -43%" / "-31%" (Torin 8)</td><td>31%–56% per SKU</td><td>none</td><td>no end date printed</td></tr>
+<tr><td>Running Warehouse</td><td>"Black Friday Deals are Live!"</td><td>not stated</td><td>none</td><td>no end date printed</td></tr>
+<tr><td>Running Warehouse</td><td>"Free 2-Day Shipping Over $50"</td><td>shipping</td><td>none</td><td>no end date printed</td></tr>
+<tr><td>Others</td><td colspan="4">Could not read: Zappos, Sierra, HOKA, adidas, Altra.</td></tr></table>
 <h2>Deals</h2>
 <p><button onclick="f('all')">Everything</button><button onclick="f('c')">12.5 confirmed</button><button onclick="f('n')">New today</button></p>
 <table id="t"><tr><th>Shoe</th><th>Site</th><th>Price</th><th>Off</th><th>Sizes 12 / 12.5 / 13</th><th>Review</th><th>Take</th></tr>
-<tr><td colspan="7">No rows: could not read any listing.</td></tr></table>
-<h2>New since last check</h2><p>Could not read.</p>
-<h2>Still active</h2><p>Could not read.</p>
-<h2>Dropped / rejected</h2><p>None evaluated.</p>
-<h2>Near-misses</h2><p>None evaluated.</p>
+<tr data-n="1"><td>Altra Paradigm 8 (Black/White, Navy/Black)</td><td>Running Warehouse</td><td>$79.88, struck $170.00</td><td>53.0118%</td><td><span class="chip">12: not listed</span><span class="chip">12.5: not listed</span><span class="chip">13: not listed</span> Black/White selector shows US 10.0 D only (2 in stock); Navy/Black could not read</td><td>Doctors of Running, 2025-08-01</td><td>A stability trainer with a guide-rail frame for runners who want a soft, high-mileage daily shoe.</td></tr></table>
+<h2>New since last check</h2><p>Altra Paradigm 8, Running Warehouse, $79.88.</p>
+<h2>Still active</h2><p>None; the 2026-11-23 board had no rows.</p>
+<h2>Dropped / rejected</h2><ul>
+<li>Altra Olympus 6: $79.88 vs struck $185.00 (56.8216% off), newest verified review RunRepeat 2024-09-11.</li>
+<li>Altra Torin 8 (White/Lime, Black/White): $89.88 vs struck $160.00 (43.825% off), newest verified review Road Trail Run 2025-02-10.</li></ul>
+<h2>Near-misses</h2><ul><li>Altra Torin 8 Dark Shadow / Light Gray: $109.88 vs $160.00 (31.325% off), same review date as above.</li></ul>
 <h2>Coverage gaps</h2><ul>
-<li>Running Warehouse: HTTP 406 on the Altra brand page.</li>
-<li>Zappos: HTTP 200, but page title "Women's Shoes"; not a men's running listing. Playwright is not installed.</li>
-<li>Sierra, HOKA: HTTP 403.</li>
-<li>Altra, adidas: no connection.</li>
-<li>Nike, Brooks, REI Garage, Saucony, New Balance and the remaining registry sites: not fetched.</li>
-<li>Snapshots saved this run: Zappos, Sierra, HOKA responses.</li></ul>
-<script>function f(k){document.querySelectorAll('#t tr[data-n]').forEach(r=>r.style.display=(k=='all'||k=='n')?'':'none')}</script></body></html>
+<li>Running Warehouse: only the Altra page was read; other brand pages 404 per registry.</li>
+<li>Zappos: HTTP 200 but title "Women's Shoes"; Playwright absent (/opt/pw-browsers missing).</li>
+<li>Sierra, HOKA, adidas: HTTP 403. Altra: DNS did not resolve.</li>
+<li>Nike, Brooks, REI Garage, Saucony, New Balance and the rest: not fetched.</li></ul>
+<script>function f(k){document.querySelectorAll('#t tr[data-n]').forEach(r=>r.style.display=(k=='c')?'none':'')}</script></body></html>

@@ -1,6 +1,6 @@
 {
   "_comment": "Site registry. How each site exposes discounts, what works, what doesn't. Update every run. A starting point, not a whitelist.",
-  "_updated": "2026-11-24",
+  "_updated": "2026-11-25",
   "sites": [
     {
       "name": "Running Warehouse",
@@ -29,7 +29,8 @@
         "OPEN QUESTION: a Haiku subagent reported an 'Extra 20% Off in Cart' badge on 11 SKUs on 2026-09-09. User verified in cart that no discount applied. Cause was a leading extraction prompt. Never re-introduce that phrasing. Determine independently whether such a badge renders at all.",
         "2026-11-22: catpage-ALTRAMS grid shows Clearance -N% tags and struck prices; PDP size selector lists only sizes in stock/sold out (no 12/12.5/13 on Altra clearance). Grid struck price absent on PDP. Black Friday drawer lists brand offers.",
         "2026-11-23: plain curl to catpage-ALTRAMS.html returned HTTP 406 (browser UA + Accept headers); WebFetch not tried.",
-        "2026-11-24: curl (browser UA) to catpage-ALTRAMS.html returned 406 again, but WebFetch of the same URL and of the Paradigm 8 PDP worked. Use WebFetch for Running Warehouse. Grid text shows 'Clearance -N%' tags and struck prices; PDP Paradigm 8 showed only US 10.0 D in stock on Black/White, no struck price in text."
+        "2026-11-24: curl (browser UA) to catpage-ALTRAMS.html returned 406 again, but WebFetch of the same URL and of the Paradigm 8 PDP worked. Use WebFetch for Running Warehouse. Grid text shows 'Clearance -N%' tags and struck prices; PDP Paradigm 8 showed only US 10.0 D in stock on Black/White, no struck price in text.",
+        "2026-11-25: curl 406 again; WebFetch of catpage-ALTRAMS.html and Paradigm 8 PDP worked. Grid struck prices carry an asterisk footnote ('based on MSRP or Original Selling Price'); PDP shows no struck price. Paradigm 8 PDP: Black/White only US 10.0 D in stock."
       ]
     },
     {
@@ -54,7 +55,8 @@
       "gotchas": [
         "Size selector lists sizes but attaches no stock count.",
         "2026-11-23: curl returned HTTP 403.",
-        "2026-11-24: curl HTTP 403 again."
+        "2026-11-24: curl HTTP 403 again.",
+        "2026-11-25: curl HTTP 403."
       ]
     },
     {
@@ -72,7 +74,8 @@
       "gotchas": [
         "Listing banner and PDP terms can state different things. Report both verbatim.",
         "2026-11-23: curl of men-running-shoes listing failed to connect (no HTTP response).",
-        "2026-11-24: curl of /us/men-running-shoes returned HTTP 403."
+        "2026-11-24: curl of /us/men-running-shoes returned HTTP 403.",
+        "2026-11-25: curl HTTP 403."
       ]
     },
     {
@@ -112,7 +115,8 @@
       "discount_exposure": "hoka.com/en/us/sale/ readable; nothing has reached the bar",
       "gotchas": [
         "2026-11-23: curl of hoka.com/en/us/sale/ returned HTTP 403.",
-        "2026-11-24: curl HTTP 403 again."
+        "2026-11-24: curl HTTP 403 again.",
+        "2026-11-25: curl HTTP 406."
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "_comment": "Cache of running-press review dates. These facts never change, so never look one up twice. confidence=verified means a source URL was confirmed in-session; confidence=carried means inherited from prior board prose with no source \u2014 re-verify before relying on it.",
-  "_updated": "2026-11-23",
+  "_updated": "2026-11-25",
   "models": {
     "Topo Athletic Specter 2": {
       "pub": "Believe in the Run",

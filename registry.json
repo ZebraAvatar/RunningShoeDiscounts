@@ -1,6 +1,6 @@
 {
   "_comment": "Site registry. How each site exposes discounts, what works, what doesn't. Update every run. A starting point, not a whitelist.",
-  "_updated": "2026-11-25",
+  "_updated": "2026-11-26",
   "sites": [
     {
       "name": "Running Warehouse",
@@ -30,7 +30,8 @@
         "2026-11-22: catpage-ALTRAMS grid shows Clearance -N% tags and struck prices; PDP size selector lists only sizes in stock/sold out (no 12/12.5/13 on Altra clearance). Grid struck price absent on PDP. Black Friday drawer lists brand offers.",
         "2026-11-23: plain curl to catpage-ALTRAMS.html returned HTTP 406 (browser UA + Accept headers); WebFetch not tried.",
         "2026-11-24: curl (browser UA) to catpage-ALTRAMS.html returned 406 again, but WebFetch of the same URL and of the Paradigm 8 PDP worked. Use WebFetch for Running Warehouse. Grid text shows 'Clearance -N%' tags and struck prices; PDP Paradigm 8 showed only US 10.0 D in stock on Black/White, no struck price in text.",
-        "2026-11-25: curl 406 again; WebFetch of catpage-ALTRAMS.html and Paradigm 8 PDP worked. Grid struck prices carry an asterisk footnote ('based on MSRP or Original Selling Price'); PDP shows no struck price. Paradigm 8 PDP: Black/White only US 10.0 D in stock."
+        "2026-11-25: curl 406 again; WebFetch of catpage-ALTRAMS.html and Paradigm 8 PDP worked. Grid struck prices carry an asterisk footnote ('based on MSRP or Original Selling Price'); PDP shows no struck price. Paradigm 8 PDP: Black/White only US 10.0 D in stock.",
+        "2026-11-26: curl 406; WebFetch of catpage-ALTRAMS.html worked and lists Torin 8 / Olympus 6 clearance with struck prices; Paradigm 8 no longer on the grid and PDP descpage-ALPA8W3.html returned 404. Promo drawer 'Black Friday Sales & Gifting! 16 Offers' lists brand offers (HOKA Bondi 9, Saucony, New Balance) - candidate lead for brand pages."
       ]
     },
     {
@@ -45,7 +46,8 @@
         "Per-SKU code eligibility is not observable without a cart. Price at shelf, annotate the code.",
         "2026-11-22: WebFetch of the category URL returned only a Women's title, no listings.",
         "2026-11-23: curl of the category URL returned HTTP 200 (2.1 MB) but the page title is \"Women's Shoes\" and listings include clogs; URL is not a men's running category. Needs a corrected URL and Playwright (/opt/pw-browsers absent in this environment).",
-        "2026-11-24: same men-running-shoes URL again returns title \"Women's Shoes\" (HTTP 200). URL is wrong; needs rediscovery."
+        "2026-11-24: same men-running-shoes URL again returns title \"Women's Shoes\" (HTTP 200). URL is wrong; needs rediscovery.",
+        "2026-11-26: same URL HTTP 200, title still \"Women's Shoes\". URL needs rediscovery; Playwright absent."
       ]
     },
     {
@@ -56,7 +58,8 @@
         "Size selector lists sizes but attaches no stock count.",
         "2026-11-23: curl returned HTTP 403.",
         "2026-11-24: curl HTTP 403 again.",
-        "2026-11-25: curl HTTP 403."
+        "2026-11-25: curl HTTP 403.",
+        "2026-11-26: curl HTTP 403."
       ]
     },
     {
@@ -75,7 +78,8 @@
         "Listing banner and PDP terms can state different things. Report both verbatim.",
         "2026-11-23: curl of men-running-shoes listing failed to connect (no HTTP response).",
         "2026-11-24: curl of /us/men-running-shoes returned HTTP 403.",
-        "2026-11-25: curl HTTP 403."
+        "2026-11-25: curl HTTP 403.",
+        "2026-11-26: curl HTTP 403."
       ]
     },
     {
@@ -107,7 +111,8 @@
     {
       "name": "Brooks",
       "tier": 2,
-      "status": "sale URL 404s as of 2026-09-09, needs rediscovery"
+      "status": "sale URL 404s as of 2026-09-09, needs rediscovery",
+      "gotchas": []
     },
     {
       "name": "HOKA",
@@ -116,53 +121,63 @@
       "gotchas": [
         "2026-11-23: curl of hoka.com/en/us/sale/ returned HTTP 403.",
         "2026-11-24: curl HTTP 403 again.",
-        "2026-11-25: curl HTTP 406."
+        "2026-11-25: curl HTTP 406.",
+        "2026-11-26: curl HTTP 403."
       ]
     },
     {
       "name": "ASICS",
       "tier": 2,
-      "status": "robots-disallowed"
+      "status": "robots-disallowed",
+      "gotchas": []
     },
     {
       "name": "New Balance",
       "tier": 2,
-      "status": "sale URL 404s / prior 403s"
+      "status": "sale URL 404s / prior 403s",
+      "gotchas": []
     },
     {
       "name": "Joe's New Balance Outlet",
       "tier": 2,
-      "status": "404s on two attempts. UNRESOLVED LEAD: SuperComp Elite v5 claimed at $105 (~60% off)"
+      "status": "404s on two attempts. UNRESOLVED LEAD: SuperComp Elite v5 claimed at $105 (~60% off)",
+      "gotchas": []
     },
     {
       "name": "Holabird",
       "tier": 2,
-      "status": "404s on two attempts. UNRESOLVED LEAD: Hyperion Max 3 claimed at $119.95"
+      "status": "404s on two attempts. UNRESOLVED LEAD: Hyperion Max 3 claimed at $119.95",
+      "gotchas": []
     },
     {
       "name": "On",
       "tier": 2,
-      "status": "sale page returns empty, 3 consecutive runs"
+      "status": "sale page returns empty, 3 consecutive runs",
+      "gotchas": []
     },
     {
       "name": "Topo Athletic",
       "tier": 2,
-      "status": "sale URL 404s"
+      "status": "sale URL 404s",
+      "gotchas": []
     },
     {
       "name": "Under Armour",
       "tier": 2,
-      "discount_exposure": "outlet running category; discounts 5-8%, nothing at the bar"
+      "discount_exposure": "outlet running category; discounts 5-8%, nothing at the bar",
+      "gotchas": []
     },
     {
       "name": "Puma",
       "tier": 2,
-      "status": "sale URL 404s"
+      "status": "sale URL 404s",
+      "gotchas": []
     },
     {
       "name": "Mizuno USA",
       "tier": 2,
-      "status": "sale URL 404s"
+      "status": "sale URL 404s",
+      "gotchas": []
     },
     {
       "name": "Peter Glenn",

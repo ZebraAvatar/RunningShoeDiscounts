@@ -1,0 +1,1 @@
+2026-11-26: curl returned 406 for runningwarehouse catpage-ALTRAMS (no raw HTML saved; read via WebFetch). adidas 403, hoka 403, sierra 403 (bodies saved). zappos 200 (title "Women's Shoes"). Playwright absent (/opt/pw-browsers missing).

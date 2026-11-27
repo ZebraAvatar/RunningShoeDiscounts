@@ -1,6 +1,6 @@
 {
   "_comment": "Cache of running-press review dates. These facts never change, so never look one up twice. confidence=verified means a source URL was confirmed in-session; confidence=carried means inherited from prior board prose with no source \u2014 re-verify before relying on it.",
-  "_updated": "2026-11-25",
+  "_updated": "2026-11-27",
   "models": {
     "Topo Athletic Specter 2": {
       "pub": "Believe in the Run",
@@ -146,6 +146,30 @@
       "date": "2024-09-11",
       "confidence": "verified",
       "note": "updated 2026-02-17; iRunFar date unread (403)"
+    },
+    "Altra Escalante 5": {
+      "pub": "RunRepeat",
+      "date": "2026-08-25",
+      "confidence": "verified"
+    },
+    "Altra FWD VIA 2": {
+      "pub": "Road Trail Run",
+      "date": "2025-10",
+      "confidence": "verified",
+      "also": "Doctors of Running 2026-03 (from URL path)",
+      "note": "months from URL path"
+    },
+    "Altra Lone Peak 9+": {
+      "pub": "Road Trail Run",
+      "date": "2025-10",
+      "confidence": "verified",
+      "note": "RTR review is of the x and Wander edition; month from URL path"
+    },
+    "Altra Lone Peak 9": {
+      "pub": "Road Trail Run",
+      "date": "2025-04",
+      "confidence": "verified",
+      "note": "outside window as of 2026-11-27; iRunFar date unread (403)"
     }
   }
 }

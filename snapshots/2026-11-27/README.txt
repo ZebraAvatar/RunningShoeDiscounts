@@ -1,0 +1,1 @@
+2026-11-27: raw curl HTML for hoka, sierra, adidas, zappos (HTTP 406/403/403/200). Running Warehouse returned 406 to curl; its pages were read via WebFetch (markdown only), so no raw HTML exists for them.
